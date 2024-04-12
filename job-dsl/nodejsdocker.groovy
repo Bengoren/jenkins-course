@@ -14,9 +14,8 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
-            def gitRevision = "${GIT_REVISION}".take(9).toLowerCase()
             repositoryName('bengoren/docker-nodejs-demo')
-            tag(gitRevision)
+            tag('${GIT_REVISION.toLowerCase(),length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
             forceTag(false)
