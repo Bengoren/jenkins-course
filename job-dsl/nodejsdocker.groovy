@@ -15,6 +15,7 @@ job('NodeJS Docker example') {
     steps {
         script {
             def gitRevision = env.GIT_COMMIT.take(9).toLowerCase()  
+        }
         dockerBuildAndPublish {
             repositoryName('bengoren/docker-nodejs-demo')
             tag(gitRevision)
