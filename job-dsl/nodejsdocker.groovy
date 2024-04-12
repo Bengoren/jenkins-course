@@ -13,8 +13,8 @@ job('NodeJS Docker example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-        def gitRevision = "${GIT_REVISION}".take(9).toLowerCase()
         dockerBuildAndPublish {
+            def gitRevision = "${GIT_REVISION}".take(9).toLowerCase()
             repositoryName('bengoren/docker-nodejs-demo')
             tag(gitRevision)
             registryCredentials('dockerhub')
