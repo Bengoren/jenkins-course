@@ -14,7 +14,7 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('Bengoren/docker-nodejs-demo')
+            repositoryName('bengoren/docker-nodejs-demo')
             tag('${GIT_REVISION.toLowerCase(),length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
